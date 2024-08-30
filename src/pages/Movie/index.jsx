@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { BsGraphUp, BsWallet2, BsHourglassSplit, BsFillFileEarmarkTextFill } from "react-icons/bs"
-import { Description, Info, MovieCard, MoviePage, Tagline } from "./styles"
+import { Informations, Description, Info, MovieCard, MoviePage, Tagline } from "./styles"
 import { FaStar } from "react-icons/fa"
 
 export default function Movie() {
@@ -25,7 +25,7 @@ export default function Movie() {
   }
 
   useEffect(() => {
-    const movieUrl = `${movieURL}${id}?${apiKey}`
+    const movieUrl = `${movieURL}${id}?${apiKey}&language=pt-BR`
     getMovie(movieUrl)
   })
 
@@ -34,11 +34,13 @@ export default function Movie() {
       <>
         <MovieCard>
           <img src={imageURL + movie.poster_path} alt={movie.title} />
+        </MovieCard>
+        <Informations >
+        
           <h2>{movie.title}</h2>
           <p>
             <FaStar  /> {movie.vote_average.toFixed(1)}
           </p>
-        </MovieCard>
         <Tagline>{movie.tagline}</Tagline>
         <Info>
           <h3>
@@ -64,6 +66,8 @@ export default function Movie() {
           </h3>
           <p>{movie.overview}</p>
         </Description>
+        </Informations>
+        
       </>
     )
     }</MoviePage>

@@ -4,10 +4,8 @@ import styled from "styled-components";
 export const MoviePage = styled.div `
     color: white;
     display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 2rem auto;
-
+    margin: 1rem 4rem;
+    height: 100%;
     svg {
         font-size: 1.5rem;
         color: #f7d354;
@@ -16,7 +14,7 @@ export const MoviePage = styled.div `
 `
 
 export const MovieCard = styled.div `
-    text-align: center;
+
     img, h2, p {
         margin-bottom: 1rem;
     }
@@ -24,12 +22,7 @@ export const MovieCard = styled.div `
     h2 {
         font-size: 2rem;
     }
-    p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.4rem;
-    }
+    
 `
 
 export const Tagline = styled.p `
@@ -57,3 +50,6 @@ export const Description = styled.div `
     }
 `
 
+export const Informations = styled.div `
+    padding: 2rem;
+`
